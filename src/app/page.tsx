@@ -25,7 +25,7 @@ async function delayFetch(url:string, delay: number) {
 }*/
 
 async function getData() {
-  const data: DataProps[] = await delayFetch("https://api.github.com/users/Vihgabiss/repos", 3500);
+  const data: DataProps[] = await delayFetch("https://api.github.com/users/Vihgabiss/repos", 1500);
   return data;
 }
 
