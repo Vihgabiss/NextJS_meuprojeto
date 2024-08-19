@@ -1,3 +1,4 @@
+import { OwnerRepo } from "@/components/ownerRepo";
 import { resolve } from "path";
 
 interface DataProps{
@@ -25,7 +26,7 @@ async function delayFetch(url:string, delay: number) {
 }*/
 
 async function getData() {
-  const data: DataProps[] = await delayFetch("https://api.github.com/users/Vihgabiss/repos", 1500);
+  const data: DataProps[] = await delayFetch("https://api.github.com/users/Vihgabiss/repos", 0);
   return data;
 }
 
@@ -43,6 +44,12 @@ export default async function Home() {
         <div key={item.id}>
           <strong>Repositório: </strong>
           <a>{item.name}</a>
+          <br/>
+          <OwnerRepo
+          avatar_url = {item.owner.avatar_url}
+          name = {item.owner.login}
+          />
+          <br/>
         </div>
       ))}
 
