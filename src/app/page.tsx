@@ -1,3 +1,4 @@
+import { resolve } from "path";
 
 interface DataProps{
   id: number;
@@ -11,10 +12,21 @@ interface DataProps{
   }
 }
 
-async function getData(){
+async function delayFetch(url:string, delay: number) {
+  await new Promise(resolve => setTimeout(resolve, delay));
+  const response = await fetch(url);
+  return response.json();
+}
+
+/*async function getData(){
   const response = await fetch("https://api.github.com/users/Vihgabiss/repos")
 
   return response.json();
+}*/
+
+async function getData() {
+  const data: DataProps[] = await delayFetch("https://api.github.com/users/Vihgabiss/repos", 3500);
+  return data;
 }
 
 export default async function Home() {
