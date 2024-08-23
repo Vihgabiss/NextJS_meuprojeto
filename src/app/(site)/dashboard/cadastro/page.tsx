@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Painel - Aprendendo NextJS",
+    title: "Painel - Cadastrando usuário",
     description: "Site completo para praticar nextjs com sujeito programador",
     keywords: ['HTML', 'CSS', 'JavaScript', 'Programação'],
     openGraph:{
@@ -19,12 +19,11 @@ export const metadata: Metadata = {
     }
   };
 
-export default function Dashboard(){
+  export default function Cadastro(){
     return(
         <div>
-            <h1>Página painel</h1>
-            <span>Bem vindo ao painel do site</span>
-            <br/>
+            <h1>Cadastrando cliente</h1>
+            <p>Essa é a página de cadastro de clientes do dashboard</p>
         </div>
     )
-}
+  }
